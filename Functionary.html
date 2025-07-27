@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,7 +82,6 @@
     nav a:hover {
       background-color: #795548;
     }
-
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -91,12 +89,69 @@
       text-align: center;
     }
 
-    .functionary-img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    .vertical-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
     }
+
+    .tree-group {
+      position: relative;
+      margin: 40px 0;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .tree-group::after {
+      content: '';
+      width: 2px;
+      height: 40px;
+      background: #4d3434;
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tree-group:last-child::after {
+      display: none;
+    }
+
+    .tree-level {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .person-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      width: 280px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .person-box img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .person-box h3 {
+      color: #4d3434;
+      font-size: 1.1rem;
+    }
+
+    .person-box p {
+      color: #333;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
 
     /* === Mobile Toggle Menu === */
     @media (max-width: 768px) {
@@ -174,11 +229,9 @@
     <h2>Aura Functionary</h2>
     <p>Meet the Officers of the Aura Family</p>
 
-    <!-- Mobile Menu Toggle Button -->
+
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
-
-  <!-- Navigation Bar -->
   <nav id="main-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -189,15 +242,82 @@
     </ul>
   </nav>
 
-  <!-- Main Content -->
   <div class="container">
-    <img src="Functionary.png" alt="Aura Functionary" class="functionary-img">
+    <div class="vertical-tree">
+      <!-- Manager -->
+      <div class="tree-group">
+        <div class="tree-level">
+          <div class="person-box">
+            <img src="founder-mgr.png" alt="Maureen">
+            <h3>Founder / Manager</h3>
+            <p>ᴬᵘᴚᵃ𓄀ᴍΛᴜʀᴇᴇɴ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founders (2 persons) -->
+      <div class="tree-group">
+        <div class="tree-level">
+          <div class="person-box">
+            <img src="blaze.png" alt="Blaze">
+            <h3>Founder</h3>
+            <p>ᴬᵘᴚᵃ𓄀ʙʟΛᴢᴇ</p>
+          </div>
+          <div class="person-box">
+            <img src="tofi.png" alt="Tofi">
+            <h3>Founder</h3>
+            <p>ᴬᵘᴚᵃ𓄀ᴛᴏғɪ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Co-Founders (2 persons) -->
+      <div class="tree-group">
+        <div class="tree-level">
+          <div class="person-box">
+            <img src="julius.png" alt="Julius">
+            <h3>Co-Founder</h3>
+            <p>ᴬᵘᴚᵃ𓄀ᴊᴜʟɪᴜs</p>
+          </div>
+          <div class="person-box">
+            <img src="jp.png" alt="JP">
+            <h3>Co-Founder</h3>
+            <p>ᴬᵘᴚᵃ𓄀ᴊᴘ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch Founder -->
+      <div class="tree-group">
+        <div class="tree-level">
+          <div class="person-box">
+            <img src="branch-founder.png" alt="Ems">
+            <h3>Branch Founder</h3>
+            <p>ᴬᵘᴚᵃ𓄀ᴇᴍs – PHOENIX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aura Admins -->
+      <div class="tree-group">
+        <div class="tree-level">
+          <div class="person-box">
+            <h3>Aura Admin</h3>
+            <p>ᴬᵘᴚᵃ𓄀ʏᴇʏᴇ  - AURA ● ADMIN 1</p>
+            <p>ᴬᵘᴚᵃ𓄀ᴍᴀɪɴᴇ - AURA ● ADMIN 2</p>
+            <p>ᴬᵘᴚᵃ𓄀ʏᴜᴍᴇ - AURA ● ADMIN 3</p>
+            <p>ᴬᵘᴚᵃ𓄀ᴊᴏᴏ - AURA ● ADMIN 4</p> 
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <script>
     function toggleMenu() {
-      const nav = document.getElementById("main-nav");
-      nav.classList.toggle("show");
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('show');
     }
   </script>
 </body>
